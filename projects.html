@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRANTO | Cyber Tools Lab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #00ff66;
+            --dim-green: #00aa44;
+            --dark-bg: rgba(5, 15, 5, 0.75);
+            --border-color: rgba(0, 255, 102, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #030a05;
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/hacker-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 6%;
+        }
+
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 255, 0, 0.04));
+            z-index: 99999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .back-home {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            border: 1px solid var(--primary-green);
+            padding: 8px 16px;
+            transition: 0.3s;
+            background: rgba(0, 255, 102, 0.05);
+        }
+
+        .back-home:hover {
+            box-shadow: 0 0 15px var(--primary-green);
+            background: var(--primary-green);
+            color: #000;
+        }
+
+        .page-title {
+            color: var(--primary-green);
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+        }
+
+        /* Tools Grid Layout */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-card {
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 4px;
+            backdrop-filter: blur(6px);
+            box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tool-card:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.1), inset 0 0 15px rgba(0, 255, 102, 0.03);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .tool-header i {
+            font-size: 24px;
+            color: var(--primary-green);
+            text-shadow: 0 0 8px var(--primary-green);
+        }
+
+        .tool-name {
+            font-size: 16px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .tool-desc {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Interactive Element Styles */
+        input[type="text"], input[type="password"], textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            color: var(--primary-green);
+            font-family: inherit;
+            font-size: 13px;
+            margin-bottom: 15px;
+            outline: none;
+            border-radius: 2px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 8px rgba(0, 255, 102, 0.2);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background: rgba(0, 255, 102, 0.1);
+            border: 1px solid var(--primary-green);
+            color: var(--primary-green);
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 12px;
+            transition: 0.2s;
+            flex: 1;
+        }
+
+        button:hover {
+            background: var(--primary-green);
+            color: #000;
+            box-shadow: 0 0 10px var(--primary-green);
+        }
+
+        .output-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px dashed var(--border-color);
+            padding: 12px;
+            font-size: 12px;
+            min-height: 40px;
+            word-break: break-all;
+            color: #e0e0e0;
+        }
+
+        .strength-indicator {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">PRANTO</a>
+        <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> CORE_SYSTEM</a>
+    </header>
+
+    <h2 class="page-title">> WEB_TOOLS_LAB // RUNNING MODULES</h2>
+
+    <div class="tools-grid">
+
+        <!-- Tool 1: Password Strength Checker -->
+        <div class="tool-card">
+            <div>
+                <div class="tool-header">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3 class="tool-name">Password Strength Analyzer</h3>
+                </div>
+                <p class="tool-desc">রিয়েল-টাইমে পাসওয়ার্ড সিকিউরিটি ভেক্টরের ডেপথ এবং হ্যাকিং রেজিস্ট্যান্স চেক করুন।</p>
+                <input type="password" id="passInput" placeholder="Enter target password..." oninput="checkPasswordStrength()">
+            </div>
+            <div class="output-box">
+                Result: <span id="strengthText" class="strength-indicator" style="color: #888;">Waiting...</span>
+            </div>
+        </div>
+
+        <!-- Tool 2: Base64 Crypter -->
+        <div class="tool-card">
+            <div>
+                <div class="tool-header">
+                    <i class="fa-solid fa-key"></i>
+                    <h3 class="tool-name">Base64 Encoder / Decoder</h3>
+                </div>
+                <p class="tool-desc">সিক্রেট ডাটা বা টোকেন দ্রুত এনকোড (Encrypt) এবং ডিকোড (Decrypt) করার প্রোটোকল।</p>
+                <textarea id="cryptoInput" rows="2" placeholder="Enter plain text or Base64 code..."></textarea>
+                <div class="btn-group">
+                    <button onclick="processBase64('encode')">ENCODE</button>
+                    <button onclick="processBase64('decode')">DECODE</button>
+                </div>
+            </div>
+            <div class="output-box" id="cryptoOutput">Output values will render here...</div>
+        </div>
+
+        <!-- Tool 3: IP System Info Extractor -->
+        <div class="tool-card">
+            <div>
+                <div class="tool-header">
+                    <i class="fa-solid fa-terminal"></i>
+                    <h3 class="tool-name">System Info & IP Sniffer</h3>
+                </div>
+                <p class="tool-desc">আপনার লোকাল গেটওয়ে ডিভাইস এনভায়রনমেন্ট, ওএস ও ব্রাউজার ফিঙ্গারপ্রিন্ট ট্র্যাকার।</p>
+            </div>
+            <div>
+                <button onclick="extractSystemInfo()" style="width: 100%; margin-bottom: 15px;">EXECUTE SNIPING</button>
+                <div class="output-box" id="systemOutput" style="font-size: 11px; white-space: pre-line;">Click EXECUTE to trace system vectors...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Live Interactive Logic -->
+    <script>
+        // 1. Password Strength Logic
+        function checkPasswordStrength() {
+            const pass = document.getElementById('passInput').value;
+            const strengthText = document.getElementById('strengthText');
+            
+            if (pass.length === 0) {
+                strengthText.innerText = "Waiting...";
+                strengthText.style.color = "#888";
+                return;
+            }
+
+            let score = 0;
+            if (pass.length >= 8) score++;
+            if (/[A-Z]/.test(pass)) score++;
+            if (/[0-9]/.test(pass)) score++;
+            if (/[^A-Za-z0-9]/.test(pass)) score++;
+
+            if (score <= 1) {
+                strengthText.innerText = "VULNERABLE (CRITICAL)";
+                strengthText.style.color = "#ff3333";
+            } else if (score === 2 || score === 3) {
+                strengthText.innerText = "MODERATE (BYPASSABLE)";
+                strengthText.style.color = "#ffaa00";
+            } else {
+                strengthText.innerText = "SECURED (MILITARY GRADE)";
+                strengthText.style.color = "#00ff66";
+            }
+        }
+
+        // 2. Base64 Logic
+        function processBase64(type) {
+            const input = document.getElementById('cryptoInput').value;
+            const outputBox = document.getElementById('cryptoOutput');
+            
+            if (!input) {
+                outputBox.innerText = "[!] Error: No text data provided.";
+                outputBox.style.color = "#ff3333";
+                return;
+            }
+
+            try {
+                if (type === 'encode') {
+                    outputBox.innerText = btoa(input);
+                } else {
+                    outputBox.innerText = atob(input);
+                }
+                outputBox.style.color = "#00ff66";
+            } catch (e) {
+                outputBox.innerText = "[!] Error: Invalid Base64 structure for decoding.";
+                outputBox.style.color = "#ff3333";
+            }
+        }
+
+        // 3. System Data Logic
+        function extractSystemInfo() {
+            const out = document.getElementById('systemOutput');
+            const userAgent = navigator.userAgent;
+            const platform = navigator.platform || "Unknown";
+            const language = navigator.language;
+            const screenRes = `${window.screen.width}x${window.screen.height}`;
+            
+            out.innerHTML = `[+] DEVICE OS: ${platform}\n[+] BROWSER: CORE_NAVIGATOR\n[+] RESOLUTION: ${screenRes}\n[+] LANGUAGE: ${language}\n[+] SIMULATED IP: 192.168.1.${Math.floor(Math.random() * 254) + 1}`;
+            out.style.color = "#00ff66";
+        }
+    </script>
+</body>
+</html>

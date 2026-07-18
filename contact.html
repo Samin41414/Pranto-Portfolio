@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRANTO | Contact Details</title>
+    <!-- Font Awesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #00ff66;
+            --dim-green: #00aa44;
+            --dark-bg: rgba(5, 15, 5, 0.75);
+            --border-color: rgba(0, 255, 102, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #030a05;
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/hacker-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Scanline CRT Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 255, 0, 0.04));
+            z-index: 99999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        .contact-container {
+            background: var(--dark-bg);
+            border: 2px solid var(--primary-green);
+            padding: 40px;
+            border-radius: 4px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.2), inset 0 0 20px rgba(0, 255, 102, 0.05);
+            backdrop-filter: blur(8px);
+            text-align: center;
+        }
+
+        .terminal-header {
+            color: var(--primary-green);
+            font-size: 22px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 2px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            width: 40px;
+            color: var(--primary-green);
+            text-shadow: 0 0 8px var(--primary-green);
+            text-align: center;
+        }
+
+        /* Specific Brand Colors on Hover for better UI experience */
+        .contact-item.whatsapp:hover i { color: #25D366; text-shadow: 0 0 8px #25D366; }
+        .contact-item.telegram:hover i { color: #0088cc; text-shadow: 0 0 8px #0088cc; }
+        .contact-item.gmail:hover i { color: #EA4335; text-shadow: 0 0 8px #EA4335; }
+
+        .contact-details {
+            margin-left: 15px;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-size: 14px;
+            color: #ffffff;
+            word-break: break-all;
+        }
+
+        .contact-item:hover .contact-value {
+            color: var(--primary-green);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 10px;
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-green);
+            text-shadow: 0 0 5px var(--primary-green);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <div class="terminal-header">> ESTABLISHING CONNECTION...</div>
+
+        <div class="contact-list">
+            
+            <!-- Phone Number (Non-clickable link or can use tel:) -->
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <div class="contact-details">
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">+8801305291569</div>
+                </div>
+            </div>
+
+            <!-- WhatsApp (Direct Chat Link) -->
+            <a href="https://wa.me/8801305291569" target="_blank" class="contact-item whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div class="contact-details">
+                    <div class="contact-label">WhatsApp</div>
+                    <div class="contact-value">Chat on WhatsApp</div>
+                </div>
+            </a>
+
+            <!-- Telegram (Direct Chat Link using international format number) -->
+            <a href="https://t.me/+8801305291569" target="_blank" class="contact-item telegram">
+                <i class="fa-brands fa-telegram"></i>
+                <div class="contact-details">
+                    <div class="contact-label">Telegram</div>
+                    <div class="contact-value">Message on Telegram</div>
+                </div>
+            </a>
+
+            <!-- Gmail (Direct Mailto Link) -->
+            <a href="mailto:Prantosamir50@gmail.com" class="contact-item gmail">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="contact-details">
+                    <div class="contact-label">Gmail</div>
+                    <div class="contact-value">Prantosamir50@gmail.com</div>
+                </div>
+            </a>
+
+        </div>
+
+        <a href="index.html" class="back-btn">[ RETURN TO HOME ]</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | PRANTO.DEV</title>
+    <style>
+        :root {
+            --primary-green: #00ff66;
+            --dim-green: #00aa44;
+            --dark-bg: rgba(5, 15, 5, 0.65);
+            --border-color: rgba(0, 255, 102, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #030a05;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hacker-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 255, 0, 0.04));
+            z-index: 99999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 6%;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(3, 10, 5, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--primary-green);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 35px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-green);
+            opacity: 1;
+            text-shadow: 0 0 8px var(--primary-green);
+        }
+
+        .about-section {
+            padding: 60px 6%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-container {
+            display: flex;
+            gap: 50px;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 4px;
+            backdrop-filter: blur(5px);
+            box-shadow: inset 0 0 20px rgba(0, 255, 102, 0.03);
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .about-image-wrapper {
+            flex: 0 0 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed var(--border-color);
+            height: 380px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid var(--primary-green);
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-heading {
+            color: var(--primary-green);
+            font-size: 28px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .interest-title {
+            color: var(--primary-green);
+            font-size: 15px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .interest-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .interest-list li {
+            font-size: 14px;
+            line-height: 2;
+            color: #ffffff;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .interest-list li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-image-wrapper {
+                flex: 0 0 auto;
+                width: 260px;
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">PRANTO<span>.DEV</span></a>
+        <nav>
+            <a href="about.html" class="active">ABOUT</a>
+            <a href="index.html#skills">SKILLS</a>
+            <a href="index.html#projects">PROJECTS</a>
+            <a href="index.html#blog">BLOG</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <!-- সরাসরি আপনার ফাইলের নাম 'imagesabout-me.jpg' এখানে যুক্ত করা হয়েছে -->
+                <img src="imagesabout-me.jpg" alt="[ERROR: IMAGE_NOT_FOUND]" class="about-image" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'color:#00ff66;font-size:12px;text-align:center;padding:10px;\'>[!] imagesabout-me.jpg NOT FOUND<br>Make sure the image file is in the exact same folder as about.html</span>'">
+            </div>
+            
+            <div class="about-content">
+                <h2 class="about-heading">> About Me</h2>
+                
+                <p class="about-text">
+                    Hi, I'm Samin Salam Pranto, a passionate tech enthusiast from Bangladesh with a strong interest in cybersecurity, ethical hacking, web development, and modern technology.
+                </p>
+                
+                <p class="about-text">
+                    I enjoy building clean, interactive, and futuristic web experiences while continuously learning new tools and technologies. My goal is to improve my skills every day and create projects that are both visually impressive and technically efficient.
+                </p>
+                
+                <h3 class="interest-title">> My interests include:</h3>
+                <ul class="interest-list">
+                    <li>Cybersecurity & Ethical Hacking</li>
+                    <li>Web Development</li>
+                    <li>Networking & Automation</li>
+                    <li>Open Source Projects</li>
+                    <li>AI & Emerging Technologies</li>
+                </ul>
+                
+                <p class="about-text" style="color: var(--primary-green);">
+                    I believe that learning never stops. Every project is an opportunity to explore new ideas, solve problems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

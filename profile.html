@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile // Samin Salam Pranto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a12;
+            color: white;
+            font-family: 'Share Tech Mono', monospace;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background-image:
+                linear-gradient(rgba(0, 240, 255, .03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, .03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .profile-container {
+            width: 950px;
+            max-width: 100%;
+            background: rgba(16, 16, 28, .9);
+            border: 2px solid #00f0ff;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(0, 240, 255, .2);
+            clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%);
+            position: relative;
+        }
+
+        .status-bar {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 12px;
+            color: #ff007f;
+            letter-spacing: 2px;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px dashed rgba(0, 240, 255, 0.3);
+            padding-bottom: 20px;
+        }
+
+        .profile-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 35px;
+            color: #00f0ff;
+            text-shadow: 0 0 10px #00f0ff;
+        }
+
+        .profile-title span {
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-box {
+            border: 1px solid #ff007f;
+            padding: 20px;
+            background: rgba(255, 0, 127, 0.02);
+            position: relative;
+        }
+
+        .section-box h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff007f;
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-shadow: 0 0 5px #ff007f;
+        }
+
+        .section-box p {
+            line-height: 1.6;
+            color: #e0e0ff;
+            margin-bottom: 12px;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            max-height: 380px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .skill-grid::-webkit-scrollbar {
+            width: 4px;
+        }
+        .skill-grid::-webkit-scrollbar-thumb {
+            background: #ff007f;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+            padding-bottom: 4px;
+        }
+
+        .skill-name {
+            color: #00f0ff;
+        }
+
+        .skill-status {
+            color: #ff007f;
+        }
+
+        .cyber-action-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid #ff007f;
+            color: #ff007f;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-shadow: 0 0 5px #ff007f;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.1);
+        }
+
+        .cyber-action-btn:hover {
+            background: #ff007f;
+            color: black;
+            box-shadow: 0 0 20px #ff007f;
+            text-shadow: none;
+        }
+
+        .footer-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid #00f0ff;
+            color: #00f0ff;
+            font-family: 'Orbitron', sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #00f0ff;
+            color: black;
+            box-shadow: 0 0 15px #00f0ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="status-bar">// USER_PROFILE: ACCESS_GRANTED</div>
+
+        <div class="profile-header">
+            <h2 class="profile-title">SAMIN_SALAM_<span>PRANTO</span></h2>
+        </div>
+
+        <div class="grid-layout">
+            <!-- বায়োগ্রাফি সেকশন -->
+            <div class="section-box">
+                <h3>[ BIOGRAPHY ]</h3>
+                <p>Hi, I’m Samin Salam Pranto, a Business Development and Lead Generation Specialist passionate about helping businesses grow through strategic sales, market research, and data-driven decision-making.</p>
+                <p>Over the years, I’ve built experience in corporate sales, B2B lead generation, data research, and client relationship management. I enjoy identifying new business opportunities, building meaningful relationships, and turning insights into measurable results.</p>
+                <p>Whether it’s generating high-quality leads, conducting market research, managing client accounts, or supporting business expansion, I believe in delivering work with professionalism, accuracy, and integrity. My goal is to create long-term value for both businesses and the people I work with.</p>
+                <p>I am always eager to learn, embrace new challenges, and contribute to projects that drive growth and innovation.</p>
+            </div>
+
+            <!-- স্কিল সেকশন -->
+            <div class="section-box">
+                <h3>[ SKILLS_LOADED ]</h3>
+                <div class="skill-grid">
+                    <div class="skill-item"><span class="skill-name">> Business Development</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> B2B Lead Generation</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Sales & Account Management</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Corporate Sales</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Market Research & Analysis</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Data Research</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Data Scraping</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Data Mining</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> CRM Management</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Client Relationship Mgmt</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Prospect Research</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Outbound Prospecting</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Cold Email Outreach</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Email Verification</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Lead Qualification</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Strategic Planning</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Business Communication</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Negotiation & Closing</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Customer Success</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Problem Solving</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Decision Making</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Project Coordination</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Prompt Engineering</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> AI Tools</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Microsoft Excel</span><span class="skill-status">[READY]</span></div>
+                    <div class="skill-item"><span class="skill-name">> Google Sheets</span><span class="skill-status">[READY]</span></div>
+                </div>
+            </div>
+
+            <!-- ৩ নম্বর সেকশন -->
+            <div class="section-box" style="grid-column: 1 / -1; text-align: center; padding: 30px;">
+                <h3>[ WANT TO KNOW MORE? ]</h3>
+                <a href="hacking-profile.html" class="cyber-action-btn">COME WITH ME</a>
+            </div>
+        </div>
+
+        <div class="footer-actions">
+            <a href="index.html" class="btn-back">< BACK TO MAIN</a>
+        </div>
+    </div>
+
+</body>
+</html>

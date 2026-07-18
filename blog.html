@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | PRANTO.DEV</title>
+    <style>
+        :root {
+            --primary-green: #00ff66;
+            --dim-green: #00aa44;
+            --dark-bg: rgba(5, 15, 5, 0.65);
+            --border-color: rgba(0, 255, 102, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #030a05;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hacker-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 255, 0, 0.04));
+            z-index: 99999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 6%;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(3, 10, 5, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--primary-green);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 35px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-green);
+            opacity: 1;
+            text-shadow: 0 0 8px var(--primary-green);
+        }
+
+        .blog-section {
+            padding: 60px 6%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .blog-container {
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 4px;
+            backdrop-filter: blur(5px);
+            box-shadow: inset 0 0 20px rgba(0, 255, 102, 0.03);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .blog-header {
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .blog-title {
+            color: var(--primary-green);
+            font-size: 26px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .blog-meta {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .blog-meta span {
+            color: var(--dim-green);
+        }
+
+        .blog-content p {
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .blog-footer-tag {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+            color: var(--primary-green);
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 25px 20px;
+            }
+            .blog-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="index.html" class="logo">PRANTO<span>.DEV</span></a>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="blog.html" class="active">BLOG</a>
+            <a href="index.html#skills">SKILLS</a>
+            <a href="index.html#projects">PROJECTS</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <!-- Blog Container -->
+    <section class="blog-section">
+        <div class="blog-container">
+            
+            <div class="blog-header">
+                <h1 class="blog-title">> My Journey Into Technology</h1>
+                <div class="blog-meta">
+                    POSTED BY: <span>RAMPAGE@PRANTO</span> | STATUS: <span>PUBLISHED</span>
+                </div>
+            </div>
+            
+            <div class="blog-content">
+                <p>
+                    Technology has always fascinated me. What started as simple curiosity gradually turned into a passion for learning, building, and exploring the digital world. Every new challenge motivates me to improve my skills and discover something I didn't know before.
+                </p>
+                
+                <p>
+                    My main interests are web development, cybersecurity, networking, automation, and modern technologies. I enjoy creating websites that combine clean design with interactive user experiences while learning how systems work behind the scenes.
+                </p>
+                
+                <p>
+                    I believe that success in technology comes from consistency. Every day I try to learn something new, whether it's a programming concept, a design technique, or a security topic. Small improvements made consistently lead to significant results over time.
+                </p>
+                
+                <p>
+                    This website is more than just a portfolio. It represents my journey, my projects, and my continuous commitment to learning. Here, I'll share new ideas, experiments, achievements, and the knowledge I gain along the way.
+                </p>
+                
+                <p>
+                    Thank you for visiting my website. I hope you enjoy exploring my work, and if you'd like to collaborate or connect, feel free to reach out.
+                </p>
+                
+                <div class="blog-footer-tag">
+                    Keep Learning. Keep Building. Keep Growing.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
