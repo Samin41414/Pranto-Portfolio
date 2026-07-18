@@ -62,13 +62,16 @@
             color: var(--primary);
         }
 
-        /* Hero Section */
+        /* Hero Section (এখানে ব্যাকগ্রাউন্ড ইমেজের পাথ ঠিক করা হয়েছে) */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 10%;
-            background: radial-gradient(circle at 80% 20%, rgba(0, 255, 204, 0.05) 0%, transparent 50%);
+            background: linear-gradient(rgba(10, 15, 29, 0.85), rgba(10, 15, 29, 0.85)), url('images/hacker-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .hero-content {
@@ -215,7 +218,6 @@
 
     <!-- About Section -->
     <section class="about" id="about">
-        <!-- এখানে ছবির পাথ ঠিক করে / দেওয়া হয়েছে -->
         <div class="about-img">
             <img src="images/about-me.jpg" alt="Pranto's Profile Picture" class="about-image">
         </div>
